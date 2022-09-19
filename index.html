@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Read More and Read Less</title>
+    <style>
+        .readMore {
+          color:red;
+        }
+        .container {
+          width : 100%;
+        }
+        .row {
+          display: flex;
+          flex-wrap: wrap;
+        }
+        .card {
+          flex: 1;
+          margin: 10px 20px;
+          box-shadow: 0px 2px 24px rgb(0 0 0 / 30%);
+          border-radius:10px
+        }
+        .card .title{
+          padding: 0px 20px;
+        }
+        .card .body {
+          padding: 10px 20px;
+        }
+        .readmore {
+          display: none;
+        }
+        .btnDivRM {
+          display: flex;
+          justify-content: center;
+          padding-top: 5px;
+        }
+         .btnDivRM button {
+          background: #d40000;
+           padding: 5px 10px;
+           border:none;
+           color: #fff;
+        }
+        .card:hover {
+              transform: scale(1.1);
+          transition: all 0.5s ease;
+        }
+        
+        @media screen and (max-width: 600px) {
+        .row {
+          display: flex;
+          flex-wrap: nowrap;
+          flex-direction: column;
+        }
+      }
+      </style>
+</head>
+<body>
+    <!-- section start -->
+      <div class="container">
+              <div class="row">
+                  <div class="card">
+                      <div class="imageContainer">
+                          <img src="https://ecommerce.unlimitedlessons.co.uk/wp-content/uploads/2022/09/ERP.webp" alt="" srcset="">
+                      </div>
+                      <div class="title">
+                          <h3>Lorem ipsum dolor</h3>
+                      </div>
+                      <div class="body">
+                          <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum laudantium corporis labore iste illo doloribus?<span class="readmore" id="rmSpan1"> Debitis iste fuga rem incidunt culpa libero veniam dignissimos ad! Facilis cupiditate reiciendis delectus error!</span>
+                          </p>
+                        <div class="btnDivRM">
+                          <button id="rmBtn1" onclick="readMoreandLess(1)">
+                          Read More
+                        </button>
+                        </div>
+                      </div>
+                  </div>
+                <div class="card">
+                      <div class="imageContainer">
+                          <img src="https://ecommerce.unlimitedlessons.co.uk/wp-content/uploads/2022/09/ERP.webp" alt="" srcset="">
+                      </div>
+                      <div class="title">
+                          <h3>Lorem ipsum dolor</h3>
+                      </div>
+                      <div class="body">
+                          <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum laudantium corporis labore iste illo doloribus?<span class="readmore" id="rmSpan2"> Debitis iste fuga rem incidunt culpa libero veniam dignissimos ad! Facilis cupiditate reiciendis delectus error!</span>
+                          </p>
+                        <div class="btnDivRM">
+                          <button id="rmBtn2" onclick="readMoreandLess(2)">
+                          Read More
+                        </button>
+                        </div>
+                      </div>
+                  </div>
+                <div class="card">
+                      <div class="imageContainer">
+                          <img src="https://ecommerce.unlimitedlessons.co.uk/wp-content/uploads/2022/09/ERP.webp" alt="" srcset="">
+                      </div>
+                      <div class="title">
+                          <h3>Lorem ipsum dolor</h3>
+                      </div>
+                      <div class="body">
+                          <p>
+                              Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum laudantium corporis labore iste illo doloribus?<span class="readmore" id="rmSpan3"> Debitis iste fuga rem incidunt culpa libero veniam dignissimos ad! Facilis cupiditate reiciendis delectus error!</span>
+                          </p>
+                        <div class="btnDivRM">
+                          <button id="rmBtn3" onclick="readMoreandLess(3)">
+                          Read More
+                        </button>
+                        </div>
+                        
+                      </div>
+                  </div>
+              </div>
+          </div>
+      
+      <script>
+      function readMoreandLess(id){
+       let idOfBtn ="rmBtn"+id;
+       let idOfSpan ="rmSpan"+id;
+      let text =  document.getElementById(idOfBtn).innerText;
+        
+          if(text === "Read More"){document.getElementById(idOfBtn).innerHTML  = "Read Less";
+          document.getElementById(idOfSpan).style.display = "block";
+                                 document.getElementById(idOfSpan).style.transitionDelay  = "3s";
+        }
+        if(text === "Read Less") {
+      document.getElementById(idOfBtn).innerHTML  = "Read More";
+        document.getElementById(idOfSpan).style.display = "none";
+          document.getElementById(idOfSpan).style.transitionDelay  = "3s";
+        }
+        
+      }
+      </script>
+</body>
+</html>
